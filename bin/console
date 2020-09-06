@@ -1,4 +1,5 @@
 #!/usr/bin/env php
 <?php
 
-use App\Kerne
+use App\Kernel;
+use Symfony\Bundl
