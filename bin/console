@@ -2,4 +2,4 @@
 <?php
 
 use App\Kernel;
-use Symfony\Bundl
+use Symfony\Bundle\FrameworkBun
