@@ -3,4 +3,4 @@
 
 use App\Kernel;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
-use Symfony\Compone
+use Symfony\Component\Console\In
