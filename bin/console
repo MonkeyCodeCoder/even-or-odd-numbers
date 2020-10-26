@@ -11,4 +11,5 @@ set_time_limit(0);
 
 require __DIR__.'/../vendor/autoload.php';
 
-if (!class_exists(Application::clas
+if (!class_exists(Application::class)) {
+    t
