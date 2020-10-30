@@ -16,4 +16,4 @@ if (!class_exists(Application::class)) {
 }
 
 if (!isset($_SERVER['APP_ENV'])) {
-    i
+    if (!class_exists(Dot
