@@ -17,4 +17,4 @@ if (!class_exists(Application::class)) {
 
 if (!isset($_SERVER['APP_ENV'])) {
     if (!class_exists(Dotenv::class)) {
- 
+        throw new \
