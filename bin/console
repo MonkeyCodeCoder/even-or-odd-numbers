@@ -17,4 +17,4 @@ if (!class_exists(Application::class)) {
 
 if (!isset($_SERVER['APP_ENV'])) {
     if (!class_exists(Dotenv::class)) {
-        throw new \RuntimeException('APP_EN
+        throw new \RuntimeException('APP_ENV environment var
