@@ -22,4 +22,5 @@ if (!isset($_SERVER['APP_ENV'])) {
     (new Dotenv())->load(__DIR__.'/../.env');
 }
 
-$input = new ArgvInput(
+$input = new ArgvInput();
+$env = $input->g
