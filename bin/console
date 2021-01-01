@@ -23,4 +23,4 @@ if (!isset($_SERVER['APP_ENV'])) {
 }
 
 $input = new ArgvInput();
-$env = $input->getParameterOption(['--env', '-e'], $_SERVER[
+$env = $input->getParameterOption(['--env', '-e'], $_SERVER['APP_ENV'] ?? 'dev
