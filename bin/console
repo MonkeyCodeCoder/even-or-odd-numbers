@@ -24,4 +24,4 @@ if (!isset($_SERVER['APP_ENV'])) {
 
 $input = new ArgvInput();
 $env = $input->getParameterOption(['--env', '-e'], $_SERVER['APP_ENV'] ?? 'dev');
-$debug = ($_SERVER['APP_DEBUG'] ?? ('prod' !== $env)) && !$inpu
+$debug = ($_SERVER['APP_DEBUG'] ?? ('prod' !== $env)) && !$input->hasParameterOp
