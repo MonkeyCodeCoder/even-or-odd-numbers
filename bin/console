@@ -29,4 +29,4 @@ $debug = ($_SERVER['APP_DEBUG'] ?? ('prod' !== $env)) && !$input->hasParameterOp
 if ($debug) {
     umask(0000);
 
-    if (class_exist
+    if (class_exists(Debug::class))
