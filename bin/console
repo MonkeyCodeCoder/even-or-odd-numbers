@@ -30,4 +30,4 @@ if ($debug) {
     umask(0000);
 
     if (class_exists(Debug::class)) {
-        D
+        Debug::enable();
