@@ -34,3 +34,4 @@ if ($debug) {
     }
 }
 
+$kernel = new Kern
