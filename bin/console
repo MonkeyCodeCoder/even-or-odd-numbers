@@ -31,3 +31,6 @@ if ($debug) {
 
     if (class_exists(Debug::class)) {
         Debug::enable();
+    }
+}
+
