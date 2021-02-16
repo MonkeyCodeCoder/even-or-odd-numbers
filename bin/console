@@ -34,4 +34,5 @@ if ($debug) {
     }
 }
 
-$kernel = new Kern
+$kernel = new Kernel($env, $debug);
+$appl
