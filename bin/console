@@ -35,4 +35,4 @@ if ($debug) {
 }
 
 $kernel = new Kernel($env, $debug);
-$appl
+$application = new A
