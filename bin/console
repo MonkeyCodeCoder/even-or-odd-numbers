@@ -35,4 +35,5 @@ if ($debug) {
 }
 
 $kernel = new Kernel($env, $debug);
-$application = new Application($ke
+$application = new Application($kernel);
+$applica
