@@ -171,3 +171,27 @@
                     "email": "mtdowling@gmail.com",
                     "homepage": "https://github.com/mtdowling"
                 },
+                {
+                    "name": "Tobias Schultze",
+                    "homepage": "https://github.com/Tobion"
+                }
+            ],
+            "description": "PSR-7 message implementation that also provides common utility methods",
+            "keywords": [
+                "http",
+                "message",
+                "request",
+                "response",
+                "stream",
+                "uri",
+                "url"
+            ],
+            "time": "2017-03-20T17:10:46+00:00"
+        },
+        {
+            "name": "kornrunner/keccak",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kornrunner/php-keccak.git",
+                "reference": "a6119e8f38663a855b5cc0455a9ab63f0610f2e0"
