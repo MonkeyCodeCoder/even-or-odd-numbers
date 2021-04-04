@@ -240,3 +240,15 @@
                 "url": "https://github.com/paragonie/constant_time_encoding.git",
                 "reference": "d96e63b79a7135a65659ba5b1cb02826172bfedd"
             },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paragonie/constant_time_encoding/zipball/d96e63b79a7135a65659ba5b1cb02826172bfedd",
+                "reference": "d96e63b79a7135a65659ba5b1cb02826172bfedd",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3|^7"
+            },
+            "require-dev": {
+                "paragonie/random_compat": "^1.4|^2.0",
+                "phpunit/phpunit": "4.*|5.*"
