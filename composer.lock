@@ -195,3 +195,29 @@
                 "type": "git",
                 "url": "https://github.com/kornrunner/php-keccak.git",
                 "reference": "a6119e8f38663a855b5cc0455a9ab63f0610f2e0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kornrunner/php-keccak/zipball/a6119e8f38663a855b5cc0455a9ab63f0610f2e0",
+                "reference": "a6119e8f38663a855b5cc0455a9ab63f0610f2e0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.5",
+                "satooshi/php-coveralls": "~2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "kornrunner\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
