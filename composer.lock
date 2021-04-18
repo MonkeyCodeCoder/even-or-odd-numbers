@@ -339,3 +339,18 @@
                 "csprng",
                 "pseudorandom",
                 "random"
+            ],
+            "time": "2017-09-27T21:40:39+00:00"
+        },
+        {
+            "name": "phpseclib/phpseclib",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpseclib/phpseclib.git",
+                "reference": "59faa1d253cf26a7b055701e1c09beeaf6bc707f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/59faa1d253cf26a7b055701e1c09beeaf6bc707f",
+                "reference": "59faa1d253cf26a7b055701e1c09beeaf6bc707f",
