@@ -678,3 +678,15 @@
         },
         {
             "name": "sc0vu/web3.php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sc0Vu/web3.php.git",
+                "reference": "e10020d2dc233771365a59fa6da99ccaa115cd1c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sc0Vu/web3.php/zipball/e10020d2dc233771365a59fa6da99ccaa115cd1c",
+                "reference": "e10020d2dc233771365a59fa6da99ccaa115cd1c",
+                "shasum": ""
+            },
