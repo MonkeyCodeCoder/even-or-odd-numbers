@@ -690,3 +690,20 @@
                 "reference": "e10020d2dc233771365a59fa6da99ccaa115cd1c",
                 "shasum": ""
             },
+            "require": {
+                "guzzlehttp/guzzle": "~6.0",
+                "kornrunner/keccak": "dev-master",
+                "php": "^7.1",
+                "phpseclib/phpseclib": "dev-master"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Web3\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
