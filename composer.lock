@@ -719,3 +719,15 @@
             "time": "2017-12-27T09:20:01+00:00"
         },
         {
+            "name": "symfony/cache",
+            "version": "v3.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/cache.git",
+                "reference": "94ce2a457bfc720be2720767b97caf44ecac6c41"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/cache/zipball/94ce2a457bfc720be2720767b97caf44ecac6c41",
+                "reference": "94ce2a457bfc720be2720767b97caf44ecac6c41",
+                "shasum": ""
