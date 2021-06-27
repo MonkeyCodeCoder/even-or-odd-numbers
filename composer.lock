@@ -848,3 +848,16 @@
             "name": "symfony/config",
             "version": "v3.4.2",
             "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/config.git",
+                "reference": "e57211b88aa889fefac1cb36866db04100b0f21c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/config/zipball/e57211b88aa889fefac1cb36866db04100b0f21c",
+                "reference": "e57211b88aa889fefac1cb36866db04100b0f21c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9|>=7.0.8",
+                "symfony/filesystem": "~2.8|~3.0|~4.0"
