@@ -1033,3 +1033,23 @@
         },
         {
             "name": "symfony/dependency-injection",
+            "version": "v3.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/dependency-injection.git",
+                "reference": "5f81907ea43bfa971ac2c7fbac593ebe7cd7d333"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/5f81907ea43bfa971ac2c7fbac593ebe7cd7d333",
+                "reference": "5f81907ea43bfa971ac2c7fbac593ebe7cd7d333",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9|>=7.0.8",
+                "psr/container": "^1.0"
+            },
+            "conflict": {
+                "symfony/config": "<3.3.7",
+                "symfony/finder": "<3.3",
+                "symfony/proxy-manager-bridge": "<3.4",
