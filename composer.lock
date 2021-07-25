@@ -1211,3 +1211,23 @@
                 }
             ],
             "description": "Symfony Filesystem Component",
+            "homepage": "https://symfony.com",
+            "time": "2017-12-14T19:40:10+00:00"
+        },
+        {
+            "name": "symfony/finder",
+            "version": "v3.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/finder.git",
+                "reference": "dac8d7db537bac7ad8143eb11360a8c2231f251a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/dac8d7db537bac7ad8143eb11360a8c2231f251a",
+                "reference": "dac8d7db537bac7ad8143eb11360a8c2231f251a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9|>=7.0.8"
+            },
