@@ -1258,3 +1258,19 @@
                     "name": "Symfony Community",
                     "homepage": "https://symfony.com/contributors"
                 }
+            ],
+            "description": "Symfony Finder Component",
+            "homepage": "https://symfony.com",
+            "time": "2017-11-05T16:10:10+00:00"
+        },
+        {
+            "name": "symfony/flex",
+            "version": "v1.0.57",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/flex.git",
+                "reference": "73423de7560c492f159aeb3eb9687b470bc87aec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/flex/zipball/73423de7560c492f159aeb3eb9687b470bc87aec",
