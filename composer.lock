@@ -1303,3 +1303,18 @@
             ],
             "authors": [
                 {
+                    "name": "Fabien Potencier",
+                    "email": "fabien.potencier@gmail.com"
+                }
+            ],
+            "time": "2018-01-03T11:28:30+00:00"
+        },
+        {
+            "name": "symfony/framework-bundle",
+            "version": "v3.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/framework-bundle.git",
+                "reference": "5fd1344f8f45b1521af7b90216eee289a426c249"
+            },
+            "dist": {
