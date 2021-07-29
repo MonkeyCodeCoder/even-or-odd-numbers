@@ -1292,3 +1292,14 @@
                 },
                 "class": "Symfony\\Flex\\Flex"
             },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Flex\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
