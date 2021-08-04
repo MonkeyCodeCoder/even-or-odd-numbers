@@ -1478,3 +1478,19 @@
             "homepage": "https://symfony.com",
             "time": "2017-12-14T19:40:10+00:00"
         },
+        {
+            "name": "symfony/http-kernel",
+            "version": "v3.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/http-kernel.git",
+                "reference": "48325096bbda77b983e642d21a4dd9bdde3ab73e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/48325096bbda77b983e642d21a4dd9bdde3ab73e",
+                "reference": "48325096bbda77b983e642d21a4dd9bdde3ab73e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9|>=7.0.8",
