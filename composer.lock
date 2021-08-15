@@ -1628,3 +1628,18 @@
                 "symfony/twig-bundle": ">=4",
                 "symfony/validator": ">=4",
                 "symfony/var-dumper": ">=4",
+                "symfony/web-link": ">=4",
+                "symfony/web-profiler-bundle": ">=4",
+                "symfony/web-server-bundle": ">=4",
+                "symfony/workflow": ">=4",
+                "symfony/yaml": ">=4"
+            },
+            "type": "metapackage",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
