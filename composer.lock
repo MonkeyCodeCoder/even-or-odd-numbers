@@ -1920,3 +1920,10 @@
                 "reference": "21a36fcaf0396c2a2c08ed791d676ce89b592187"
             },
             "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/dotenv/zipball/21a36fcaf0396c2a2c08ed791d676ce89b592187",
+                "reference": "21a36fcaf0396c2a2c08ed791d676ce89b592187",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9|>=7.0.8"
