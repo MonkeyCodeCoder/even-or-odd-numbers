@@ -1967,3 +1967,18 @@
                 "environment"
             ],
             "time": "2017-12-08T15:24:53+00:00"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "kornrunner/keccak": 20,
+        "phpseclib/phpseclib": 20,
+        "sc0vu/web3.php": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "^7.0.8",
+        "ext-iconv": "*"
+    },
