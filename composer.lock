@@ -1982,3 +1982,5 @@
         "php": "^7.0.8",
         "ext-iconv": "*"
     },
+    "platform-dev": []
+}
