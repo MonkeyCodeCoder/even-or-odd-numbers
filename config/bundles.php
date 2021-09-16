@@ -1,4 +1,4 @@
 <?php
 
 return [
-    Symfony\Bundle\FrameworkBundle\Frame
+    Symfony\Bundle\FrameworkBundle\FrameworkBundle::cla
