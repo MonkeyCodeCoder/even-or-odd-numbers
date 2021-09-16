@@ -1,4 +1,4 @@
 <?php
 
 return [
-    Symfony\Bundle\FrameworkBundle\FrameworkBundle::cla
+    Symfony\Bundle\FrameworkBundle\FrameworkBundle::class => ['all' =
