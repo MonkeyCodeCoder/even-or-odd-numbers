@@ -1,4 +1,4 @@
 <?php
 
 return [
-    Symfony\Bundle\Fram
+    Symfony\Bundle\FrameworkBundle\Frame
