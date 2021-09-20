@@ -1,3 +1,3 @@
 framework:
     router:
-        strict_requ
+        strict_requirements: true
