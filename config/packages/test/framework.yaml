@@ -1,3 +1,4 @@
 framework:
     test: ~
-    # Uncomment this section if you're u
+    # Uncomment this section if you're using sessions
+  
