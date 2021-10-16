@@ -15,4 +15,5 @@ use App\Model\ApiModel;
 
 class AccesContract
 {
-   
+    /**
+     * @Route(
