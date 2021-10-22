@@ -17,4 +17,5 @@ class AccesContract
 {
     /**
      * @Route("/access")
-  
+     */
+    pub
