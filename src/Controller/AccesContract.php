@@ -18,4 +18,5 @@ class AccesContract
     /**
      * @Route("/access")
      */
-    public function 
+    public function number()
+    
