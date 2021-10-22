@@ -18,4 +18,4 @@ class AccesContract
     /**
      * @Route("/access")
      */
-    pub
+    public function 
