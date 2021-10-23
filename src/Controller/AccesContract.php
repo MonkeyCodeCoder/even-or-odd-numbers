@@ -20,4 +20,6 @@ class AccesContract
      */
     public function number()
     {
-        $number = mt_rand(0, 
+        $number = mt_rand(0, 100);
+
+        r
