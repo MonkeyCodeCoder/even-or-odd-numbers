@@ -24,4 +24,7 @@ class AccesContract
 
         return new Response(
             '<html><body>Lucky number: '.$number.'</body></html>'
-      
+        );
+    }
+
+    /
