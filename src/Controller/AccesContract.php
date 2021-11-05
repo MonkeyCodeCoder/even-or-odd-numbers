@@ -23,4 +23,5 @@ class AccesContract
         $number = mt_rand(0, 100);
 
         return new Response(
-            '<html><body>Lucky number: '.$number.'</body
+            '<html><body>Lucky number: '.$number.'</body></html>'
+      
