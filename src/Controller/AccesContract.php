@@ -28,4 +28,5 @@ class AccesContract
     }
 
     /**
-     * @Ro
+     * @Route("/test")
+     *
