@@ -30,4 +30,5 @@ class AccesContract
     /**
      * @Route("/test")
      */
-    public f
+    public function test()
+ 
