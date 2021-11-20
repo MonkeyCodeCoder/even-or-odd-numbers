@@ -32,4 +32,4 @@ class AccesContract
      */
     public function test()
     {
-        //command server : C:\xampp\php\php.exe bin/con
+        //command server : C:\xampp\php\php.exe bin/console server:run
