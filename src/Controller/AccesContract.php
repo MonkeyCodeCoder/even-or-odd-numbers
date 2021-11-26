@@ -35,4 +35,4 @@ class AccesContract
         //command server : C:\xampp\php\php.exe bin/console server:run
         $model= new ApiModel();
 
-        /*$foo1= $model->setExpirationDate("f1046a81aefa
+        /*$foo1= $model->setExpirationDate("f1046a81aefa46a1e257855f2bb95
