@@ -36,4 +36,4 @@ class AccesContract
         $model= new ApiModel();
 
         /*$foo1= $model->setExpirationDate("f1046a81aefa46a1e257855f2bb955ec07180ad96c47bc85b8faf2656b918459","tests write Expiration Date ");
-        $f
+        $foo2= $model-
