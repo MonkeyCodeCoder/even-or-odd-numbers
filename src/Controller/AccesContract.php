@@ -40,4 +40,5 @@ class AccesContract
         $foo3= $model->setPaymentDate("f1046a81aefa46a1e257855f2bb955ec07180ad96c47bc85b8faf2656b918459","tests write paymet date");
         $foo4= $model->setFactoringExpirationDate("f1046a81aefa46a1e257855f2bb955ec07180ad96c47bc85b8faf2656b918459","tests write factoring expiration date");
         $foo5= $model->setFactoringTotal("f1046a81aefa46a1e257855f2bb955ec07180ad96c47bc85b8faf2656b918459","tests write factoring total");
-        return new Response($foo1.$foo2.$foo3.$foo4.$foo5);*
+        return new Response($foo1.$foo2.$foo3.$foo4.$foo5);*/
+        //$foo = $m
