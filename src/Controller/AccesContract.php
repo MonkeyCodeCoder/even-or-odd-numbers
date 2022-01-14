@@ -43,4 +43,4 @@ class AccesContract
         return new Response($foo1.$foo2.$foo3.$foo4.$foo5);*/
         //$foo = $model->getInvoiceNumber("f1146a81aefa46a1e257855f2bb955ec07180ad96c47bc85b8faf2656b918459");
         //$foo = $model->getDocumentCount();
-        //$foo = $m
+        //$foo = $model->getDocum
