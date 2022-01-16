@@ -44,4 +44,5 @@ class AccesContract
         //$foo = $model->getInvoiceNumber("f1146a81aefa46a1e257855f2bb955ec07180ad96c47bc85b8faf2656b918459");
         //$foo = $model->getDocumentCount();
         //$foo = $model->getDocumentAtIndex(0);
-        $foo = nl2br($model->getAll("f1046a81aefa46a1e257855f2bb955ec07180ad96c47bc85b8faf26
+        $foo = nl2br($model->getAll("f1046a81aefa46a1e257855f2bb955ec07180ad96c47bc85b8faf2656b918459"));
+ 
