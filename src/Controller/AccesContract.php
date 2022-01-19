@@ -45,4 +45,4 @@ class AccesContract
         //$foo = $model->getDocumentCount();
         //$foo = $model->getDocumentAtIndex(0);
         $foo = nl2br($model->getAll("f1046a81aefa46a1e257855f2bb955ec07180ad96c47bc85b8faf2656b918459"));
-        //$foo = $model->deleteDocument("f9446a81aefa46a1e257855f2bb9
+        //$foo = $model->deleteDocument("f9446a81aefa46a1e257855f2bb955ec07180ad96c47
