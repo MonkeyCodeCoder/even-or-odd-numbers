@@ -49,4 +49,4 @@ class AccesContract
         //$foo = $model->deleteAll();
         /*$foo = $model->insertDocument("f1146a81aefa46a1e257855f2bb955ec07180ad96c47bc85b8faf2656b918459",
             "invoice numbre test","fiscal year test","total test","factoring total test",
-       
+            "state
