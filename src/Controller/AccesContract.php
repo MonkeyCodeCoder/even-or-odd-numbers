@@ -51,4 +51,5 @@ class AccesContract
             "invoice numbre test","fiscal year test","total test","factoring total test",
             "state test","currency test","payment type test","supplier name test",
             "customer name test","finacial institutio name test","factoring state test",
-            "payment term test"," invoice date test","payment dat
+            "payment term test"," invoice date test","payment date test",
+    
