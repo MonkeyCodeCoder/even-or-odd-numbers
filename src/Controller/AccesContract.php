@@ -52,4 +52,4 @@ class AccesContract
             "state test","currency test","payment type test","supplier name test",
             "customer name test","finacial institutio name test","factoring state test",
             "payment term test"," invoice date test","payment date test",
-            "expiration date test","factoring
+            "expiration date test","factoring expiration dat
