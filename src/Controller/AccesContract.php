@@ -53,4 +53,5 @@ class AccesContract
             "customer name test","finacial institutio name test","factoring state test",
             "payment term test"," invoice date test","payment date test",
             "expiration date test","factoring expiration date test");*/
-        //$foo = $model->getDocumentList()
+        //$foo = $model->getDocumentList();
+        //$f
