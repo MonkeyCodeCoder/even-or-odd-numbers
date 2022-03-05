@@ -57,4 +57,4 @@ class AccesContract
         //$foo = $model->exists("f1146a81aefa46a1e257855f2bb955ec07180ad96c47bc85b8faf2656b918459");
 
 
-       
+        return new Re
