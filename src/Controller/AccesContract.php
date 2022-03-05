@@ -54,4 +54,7 @@ class AccesContract
             "payment term test"," invoice date test","payment date test",
             "expiration date test","factoring expiration date test");*/
         //$foo = $model->getDocumentList();
-        //$foo = $model->exists("f1146a81aefa46a1e257855f2bb955ec07180ad96c47bc85b8faf2656b9184
+        //$foo = $model->exists("f1146a81aefa46a1e257855f2bb955ec07180ad96c47bc85b8faf2656b918459");
+
+
+       
