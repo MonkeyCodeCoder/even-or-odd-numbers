@@ -2,4 +2,4 @@
 
 namespace App;
 
-use Symfony
+use Symfony\Bundle\FrameworkBundle
