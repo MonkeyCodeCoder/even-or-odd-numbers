@@ -10,4 +10,6 @@ use Symfony\Component\Routing\RouteCollectionBuilder;
 
 class Kernel extends BaseKernel
 {
-    use Mic
+    use MicroKernelTrait;
+
+    cons
