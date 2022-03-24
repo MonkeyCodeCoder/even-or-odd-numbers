@@ -12,4 +12,4 @@ class Kernel extends BaseKernel
 {
     use MicroKernelTrait;
 
-    const CONFIG_EXTS =
+    const CONFIG_EXTS = '.{php,xml,yam
