@@ -12,4 +12,4 @@ class Kernel extends BaseKernel
 {
     use MicroKernelTrait;
 
-    cons
+    const CONFIG_EXTS =
