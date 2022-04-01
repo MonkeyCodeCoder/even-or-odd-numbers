@@ -19,4 +19,4 @@ class Kernel extends BaseKernel
         return $this->getProjectDir().'/var/cache/'.$this->environment;
     }
 
-    publ
+    public function ge
