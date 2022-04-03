@@ -21,4 +21,4 @@ class Kernel extends BaseKernel
 
     public function getLogDir()
     {
-        return $this-
+        return $this->getProje
