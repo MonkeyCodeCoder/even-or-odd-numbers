@@ -24,4 +24,5 @@ class Kernel extends BaseKernel
         return $this->getProjectDir().'/var/log';
     }
 
-    public function registe
+    public function registerBundles()
+ 
