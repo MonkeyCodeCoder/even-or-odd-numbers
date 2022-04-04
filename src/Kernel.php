@@ -25,4 +25,5 @@ class Kernel extends BaseKernel
     }
 
     public function registerBundles()
- 
+    {
+        $conte
