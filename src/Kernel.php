@@ -26,4 +26,4 @@ class Kernel extends BaseKernel
 
     public function registerBundles()
     {
-        $conte
+        $contents = require $this
