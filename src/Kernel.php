@@ -26,4 +26,4 @@ class Kernel extends BaseKernel
 
     public function registerBundles()
     {
-        $contents = require $this->getProjectDir
+        $contents = require $this->getProjectDir().'/config/bundles
