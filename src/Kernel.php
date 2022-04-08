@@ -27,4 +27,4 @@ class Kernel extends BaseKernel
     public function registerBundles()
     {
         $contents = require $this->getProjectDir().'/config/bundles.php';
-        fo
+        foreach ($conten
