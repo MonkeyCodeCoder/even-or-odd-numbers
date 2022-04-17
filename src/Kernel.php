@@ -32,4 +32,6 @@ class Kernel extends BaseKernel
                 yield new $class();
             }
         }
-    
+    }
+
+    protect
