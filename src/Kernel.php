@@ -34,4 +34,4 @@ class Kernel extends BaseKernel
         }
     }
 
-    protected function 
+    protected function configureConta
