@@ -34,4 +34,4 @@ class Kernel extends BaseKernel
         }
     }
 
-    protect
+    protected function 
