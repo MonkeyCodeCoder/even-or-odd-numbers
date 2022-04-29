@@ -34,4 +34,4 @@ class Kernel extends BaseKernel
         }
     }
 
-    protected function configureContainer(ContainerBuilder $container, LoaderInter
+    protected function configureContainer(ContainerBuilder $container, LoaderInterface $load
