@@ -37,4 +37,4 @@ class Kernel extends BaseKernel
     protected function configureContainer(ContainerBuilder $container, LoaderInterface $loader)
     {
         $container->setParameter('container.autowiring.strict_mode', true);
-        $container->setParameter('container.dumper
+        $container->setParameter('container.dumper.inline_class_lo
