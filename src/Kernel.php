@@ -38,4 +38,4 @@ class Kernel extends BaseKernel
     {
         $container->setParameter('container.autowiring.strict_mode', true);
         $container->setParameter('container.dumper.inline_class_loader', true);
-    
+        $confDir = 
