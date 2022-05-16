@@ -41,4 +41,4 @@ class Kernel extends BaseKernel
         $confDir = $this->getProjectDir().'/config';
         $loader->load($confDir.'/packages/*'.self::CONFIG_EXTS, 'glob');
         if (is_dir($confDir.'/packages/'.$this->environment)) {
-            $load
+            $loader->load($confDir.
