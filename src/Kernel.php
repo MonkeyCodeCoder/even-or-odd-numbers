@@ -49,4 +49,4 @@ class Kernel extends BaseKernel
 
     protected function configureRoutes(RouteCollectionBuilder $routes)
     {
-        $confDir = $this->getP
+        $confDir = $this->getProjectDir().'/
