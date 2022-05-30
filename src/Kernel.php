@@ -50,4 +50,5 @@ class Kernel extends BaseKernel
     protected function configureRoutes(RouteCollectionBuilder $routes)
     {
         $confDir = $this->getProjectDir().'/config';
-        if (is_dir($confDir.
+        if (is_dir($confDir.'/routes/')) {
+   
