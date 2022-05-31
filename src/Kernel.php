@@ -51,4 +51,4 @@ class Kernel extends BaseKernel
     {
         $confDir = $this->getProjectDir().'/config';
         if (is_dir($confDir.'/routes/')) {
-            $routes->impor
+            $routes->import($confDir.'/route
