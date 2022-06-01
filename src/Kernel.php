@@ -52,3 +52,5 @@ class Kernel extends BaseKernel
         $confDir = $this->getProjectDir().'/config';
         if (is_dir($confDir.'/routes/')) {
             $routes->import($confDir.'/routes/*'.self::CONFIG_EXTS, '/', 'glob');
+        }
+        if
