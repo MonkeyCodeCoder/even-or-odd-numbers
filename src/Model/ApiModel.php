@@ -28,3 +28,19 @@ class ApiModel
         $params= json_encode($data);
         $handler = curl_init();
         curl_setopt($handler, CURLOPT_URL, self::URl);
+        curl_setopt($handler, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+        curl_setopt($handler, CURLOPT_POST,true);
+        curl_setopt($handler, CURLOPT_POSTFIELDS, $params);
+        curl_setopt($handler, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec ($handler);
+        curl_close($handler);
+        $json=json_decode($response,true);
+        $result=$json['result'];
+        // ejemplo de resultado
+        //0x
+        //0000000000000000000000000000000000000000000000000000000000000004  la respuesta en hex
+        $argResult = substr($result,2);// eliminar 0x
+        return hexdec($argResult);
+
+
+    }
