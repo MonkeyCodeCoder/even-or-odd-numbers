@@ -44,3 +44,17 @@ class ApiModel
 
 
     }
+
+    function getDocumentAtIndex($index){
+        //index plezplasado 32 bytes
+        $indexPad =str_pad($index, 64, "0", STR_PAD_LEFT);
+        //keccak-256 de getDocumentAtIndex(uint256)77d2ab4fabe09035e251da8807814748a7110687787881ee10e31bb505b9d395, se toman los 8 primeros caracteres
+        $call="0x77d2ab4f". $indexPad;
+
+
+        $data  = [
+            'jsonrpc'=>'2.0','method'=>'eth_call','params'=>[[
+                "from"=> self::ACCOUNT, "to"=> self::CONTRACT,"data"=> $call],'latest'
+            ],'id'=>67
+        ];
+        $params= json_encode($data);
