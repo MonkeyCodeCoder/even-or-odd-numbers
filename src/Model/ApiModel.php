@@ -74,3 +74,20 @@ class ApiModel
         //0000000000000000000000000000000000000000000000000000000000000040 indica el tamaño de la respuesta(0x40-> 64 B -> 128 caracteres)
         //6636343436613831616566613436613165323537383535663262623935356563 la respuesta en hex
         //3037313830616439366334376263383562386661663236353662393138343539
+
+        $lenghtAndArgResult = substr($result,66);// string con la longitud de la respuesta y la respuesta
+        $lenghtResult= substr($lenghtAndArgResult,0,64);// logitud del resultado
+        $argResult=substr($lenghtAndArgResult,64,hexdec($lenghtResult)*2); // argumento
+
+        return $this->Hex2String($argResult);
+    }
+
+    function getDocumentList(){
+        $count =$this->getDocumentCount();
+        for($i=0;$i<$count;$i++){
+            $result[$i]= $this->getDocumentAtIndex($i);
+        }
+        return \Graze\GuzzleHttp\JsonRpc\json_encode($result );
+    }
+
+    function exists($id){
