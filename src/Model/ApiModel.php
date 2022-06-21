@@ -91,3 +91,16 @@ class ApiModel
     }
 
     function exists($id){
+        // hex del id
+        $idHex = $this->String2Hex($id);
+        //tomar el numero de caracteres, dividir por 2 para obtener el numero de bytes y pasar ese numero a hex y dezplazarlo
+        $lengthIdHex=str_pad(dechex(strlen($idHex )/2), 64, "0", STR_PAD_LEFT);
+        //32 bytes desde el id del metodo hasta el argumento, hex de 32 = 20
+        $argIdPos =str_pad(20, 64, "0", STR_PAD_LEFT);
+        //keccak-256 de exists(string)261a323e87a367a6fec01842ab1be2786193d1a5558fde3e4834378f2761ad3a, se toman los 8 primeros caracteres
+        $call="0x261a323e". $argIdPos . $lengthIdHex . $idHex;
+
+        $data  = [
+            'jsonrpc'=>'2.0','method'=>'eth_call','params'=>[[
+                "from"=> self::ACCOUNT, "to"=> self::CONTRACT,"data"=> $call],'latest'
+            ],'id'=>67
