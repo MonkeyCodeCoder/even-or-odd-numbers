@@ -128,3 +128,12 @@ class ApiModel
     }
 
 //----------------------------------------------------getters------------------------------------------
+    function getInvoiceNumber($id){
+        // hex del id
+        $idHex = $this->String2Hex($id);
+        //tomar el numero de caracteres, dividir por 2 para obtener el numero de bytes y pasar ese numero a hex y dezplazarlo
+        $lengthIdHex=str_pad(dechex(strlen($idHex )/2), 64, "0", STR_PAD_LEFT);
+        //32 bytes desde el id del metodo hasta el argumento, hex de 32 = 20
+        $argIdPos =str_pad(20, 64, "0", STR_PAD_LEFT);
+        //keccak-256 de getInvoiceNumber(string) 0b58d080e1defde665f3203704d8e49229d00557e10cd9b8c6fdb8cb3aba74b6, se toman los 8 primeros caracteres
+        $call="0x0b58d080". $argIdPos . $lengthIdHex . $idHex;
