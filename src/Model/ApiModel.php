@@ -116,3 +116,15 @@ class ApiModel
         curl_close($handler);
         $json=json_decode($response,true);
         $result=$json['result'];
+        // ejemplo de resultado
+        //0x
+        //0000000000000000000000000000000000000000000000000000000000000000
+        //o
+        //0000000000000000000000000000000000000000000000000000000000000001
+        $argResult = substr($result,65);// string con la longitud de la respuesta y la respuesta
+
+        return $argResult;
+
+    }
+
+//----------------------------------------------------getters------------------------------------------
