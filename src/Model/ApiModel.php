@@ -159,3 +159,23 @@ class ApiModel
         //0000000000000000000000000000000000000000000000000000000000000020  indica donde empieza la definicion de la respuesta(a los 32 B)
         //0000000000000000000000000000000000000000000000000000000000000009  indica el tamaño de la respuesta(9 B -> 18 caracteres)
         //3031372d30303535330000000000000000000000000000000000000000000000  la respuesta en hex
+        $lenghtAndArgResult = substr($result,66);// string con la longitud de la respuesta y la respuesta
+        $lenghtResult= substr($lenghtAndArgResult,0,64);// logitud del resultado
+        $argResult=substr($lenghtAndArgResult,64,hexdec($lenghtResult)*2); // argumento
+
+        return $this->Hex2String($argResult);
+
+    }
+
+    function getFiscalYear($id){
+        // hex f7446a81aefa46a1e257855f2bb955ec07180ad96c47bc85b8faf2656b918459
+        //$idhex = "66373434366138316165666134366131653235373835356632626239353565633037313830616439366334376263383562386661663236353662393138343539";
+        $idHex = $this->String2Hex($id);
+        // tamaño en bytes del hex, 64 bytes -> 40 en hex
+        //$leghthex= "0000000000000000000000000000000000000000000000000000000000000040";
+        //tomar el numero de caracteres, dividir por 2 para obtener el numero de bytes y pasar ese numero a hex y dezplazarlo
+        $lengthIdHex=str_pad(dechex(strlen($idHex )/2), 64, "0", STR_PAD_LEFT);
+        //32 bytes desde el id del metodo hasta el argumento, hex de 32 = 20
+        $argIdPos =str_pad(20, 64, "0", STR_PAD_LEFT);
+        //keccak-256 de getFiscalYear(string) 08702936ef292a7d8cdb9771680860a168f7280ba759592306236916a440d99e, se toman los 8 primeros caracteres
+        $call="0x08702936". $argIdPos . $lengthIdHex . $idHex;
