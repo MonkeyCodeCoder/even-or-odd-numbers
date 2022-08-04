@@ -328,3 +328,21 @@ class ApiModel
 
     function getCurrency($id){
         // hex del id
+        $idHex = $this->String2Hex($id);
+        //tomar el numero de caracteres, dividir por 2 para obtener el numero de bytes y pasar ese numero a hex y dezplazarlo
+        $lengthIdHex=str_pad(dechex(strlen($idHex )/2), 64, "0", STR_PAD_LEFT);
+        //32 bytes desde el id del metodo hasta el argumento, hex de 32 = 20
+        $argIdPos =str_pad(20, 64, "0", STR_PAD_LEFT);
+        //keccak-256 de getCurrency(string) f8066d6b070491baee72a2526e2f28168d81c57d0548751713bd4b5de1688900, se toman los 8 primeros caracteres
+        $call="0xf8066d6b". $argIdPos . $lengthIdHex . $idHex;
+
+        $data  = [
+            'jsonrpc'=>'2.0','method'=>'eth_call','params'=>[[
+                "from"=> self::ACCOUNT, "to"=> self::CONTRACT,"data"=> $call],'latest'
+            ],'id'=>67
+        ];
+        $params= json_encode($data);
+        $handler = curl_init();
+        curl_setopt($handler, CURLOPT_URL, self::URl);
+        curl_setopt($handler, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+        curl_setopt($handler, CURLOPT_POST,true);
