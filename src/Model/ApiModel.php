@@ -356,3 +356,24 @@ class ApiModel
         //0x
         //0000000000000000000000000000000000000000000000000000000000000020  indica donde empieza la definicion de la respuesta(a los 32 B)
         //0000000000000000000000000000000000000000000000000000000000000009  indica el tamaño de la respuesta(9 B -> 18 caracteres)
+        //3031372d30303535330000000000000000000000000000000000000000000000  la respuesta en hex
+        $lenghtAndArgResult = substr($result,66);// string con la longitud de la respuesta y la respuesta
+        $lenghtResult= substr($lenghtAndArgResult,0,64);// logitud del resultado
+        $argResult=substr($lenghtAndArgResult,64,hexdec($lenghtResult)*2); // argumento
+
+        return $this->Hex2String($argResult);
+
+    }
+
+    function getPaymentType($id){
+        // hex del id
+        $idHex = $this->String2Hex($id);
+        //tomar el numero de caracteres, dividir por 2 para obtener el numero de bytes y pasar ese numero a hex y dezplazarlo
+        $lengthIdHex=str_pad(dechex(strlen($idHex )/2), 64, "0", STR_PAD_LEFT);
+        //32 bytes desde el id del metodo hasta el argumento, hex de 32 = 20
+        $argIdPos =str_pad(20, 64, "0", STR_PAD_LEFT);
+        //keccak-256 de getPaymentType(string) 87570100868db69edafd58092dbfb8e1e473e0890385c935a38b217ab5b71182, se toman los 8 primeros caracteres
+        $call="0x87570100". $argIdPos . $lengthIdHex . $idHex;
+
+        $data  = [
+            'jsonrpc'=>'2.0','method'=>'eth_call','params'=>[[
