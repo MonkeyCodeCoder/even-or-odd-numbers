@@ -454,3 +454,23 @@ class ApiModel
         $call="0x100d4d23". $argIdPos . $lengthIdHex . $idHex;
 
         $data  = [
+            'jsonrpc'=>'2.0','method'=>'eth_call','params'=>[[
+                "from"=> self::ACCOUNT, "to"=> self::CONTRACT,"data"=> $call],'latest'
+            ],'id'=>67
+        ];
+        $params= json_encode($data);
+        $handler = curl_init();
+        curl_setopt($handler, CURLOPT_URL, self::URl);
+        curl_setopt($handler, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+        curl_setopt($handler, CURLOPT_POST,true);
+        curl_setopt($handler, CURLOPT_POSTFIELDS, $params);
+        curl_setopt($handler, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec ($handler);
+        curl_close($handler);
+        $json=json_decode($response,true);
+        $result=$json['result'];
+        // ejemplo de resultado
+        //0x
+        //0000000000000000000000000000000000000000000000000000000000000020  indica donde empieza la definicion de la respuesta(a los 32 B)
+        //0000000000000000000000000000000000000000000000000000000000000009  indica el tamaño de la respuesta(9 B -> 18 caracteres)
+        //3031372d30303535330000000000000000000000000000000000000000000000  la respuesta en hex
