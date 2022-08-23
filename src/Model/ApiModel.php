@@ -474,3 +474,22 @@ class ApiModel
         //0000000000000000000000000000000000000000000000000000000000000020  indica donde empieza la definicion de la respuesta(a los 32 B)
         //0000000000000000000000000000000000000000000000000000000000000009  indica el tamaño de la respuesta(9 B -> 18 caracteres)
         //3031372d30303535330000000000000000000000000000000000000000000000  la respuesta en hex
+        $lenghtAndArgResult = substr($result,66);// string con la longitud de la respuesta y la respuesta
+        $lenghtResult= substr($lenghtAndArgResult,0,64);// logitud del resultado
+        $argResult=substr($lenghtAndArgResult,64,hexdec($lenghtResult)*2); // argumento
+
+        return $this->Hex2String($argResult);
+
+    }
+
+    function getFinancialInstitutionName($id){
+        // hex del id
+        $idHex = $this->String2Hex($id);
+        //tomar el numero de caracteres, dividir por 2 para obtener el numero de bytes y pasar ese numero a hex y dezplazarlo
+        $lengthIdHex=str_pad(dechex(strlen($idHex )/2), 64, "0", STR_PAD_LEFT);
+        //32 bytes desde el id del metodo hasta el argumento, hex de 32 = 20
+        $argIdPos =str_pad(20, 64, "0", STR_PAD_LEFT);
+        //keccak-256 de getFinancialInstitutionName(string) 946143a25b2d5ddf413b79af7d18ee479a31d32cccf16457937bd548cc2f02a1, se toman los 8 primeros caracteres
+        $call="0x946143a2". $argIdPos . $lengthIdHex . $idHex;
+
+        $data  = [
