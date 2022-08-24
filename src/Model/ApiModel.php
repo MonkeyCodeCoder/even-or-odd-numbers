@@ -555,3 +555,15 @@ class ApiModel
         $lenghtAndArgResult = substr($result,66);// string con la longitud de la respuesta y la respuesta
         $lenghtResult= substr($lenghtAndArgResult,0,64);// logitud del resultado
         $argResult=substr($lenghtAndArgResult,64,hexdec($lenghtResult)*2); // argumento
+
+        return $this->Hex2String($argResult);
+
+    }
+
+    function getPaymentTerms($id){
+        // hex del id
+        $idHex = $this->String2Hex($id);
+        //tomar el numero de caracteres, dividir por 2 para obtener el numero de bytes y pasar ese numero a hex y dezplazarlo
+        $lengthIdHex=str_pad(dechex(strlen($idHex )/2), 64, "0", STR_PAD_LEFT);
+        //32 bytes desde el id del metodo hasta el argumento, hex de 32 = 20
+        $argIdPos =str_pad(20, 64, "0", STR_PAD_LEFT);
