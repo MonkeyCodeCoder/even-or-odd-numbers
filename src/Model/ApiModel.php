@@ -678,3 +678,18 @@ class ApiModel
         return $this->Hex2String($argResult);
 
     }
+
+    function getExpirationDate($id){
+        // hex del id
+        $idHex = $this->String2Hex($id);
+        //tomar el numero de caracteres, dividir por 2 para obtener el numero de bytes y pasar ese numero a hex y dezplazarlo
+        $lengthIdHex=str_pad(dechex(strlen($idHex )/2), 64, "0", STR_PAD_LEFT);
+        //32 bytes desde el id del metodo hasta el argumento, hex de 32 = 20
+        $argIdPos =str_pad(20, 64, "0", STR_PAD_LEFT);
+        //keccak-256 de getExpirationDate(string) cbb9cd5d57a6c7e2204b22b93093b1ceefbd6d55b4220f0b0a3c382032a6d57a, se toman los 8 primeros caracteres
+        $call="0xcbb9cd5d". $argIdPos . $lengthIdHex . $idHex;
+
+        $data  = [
+            'jsonrpc'=>'2.0','method'=>'eth_call','params'=>[[
+                "from"=> self::ACCOUNT, "to"=> self::CONTRACT,"data"=> $call],'latest'
+            ],'id'=>67
