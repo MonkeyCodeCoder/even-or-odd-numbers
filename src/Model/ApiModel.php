@@ -745,3 +745,17 @@ class ApiModel
         $json=json_decode($response,true);
         $result=$json['result'];
         // ejemplo de resultado
+        //0x
+        //0000000000000000000000000000000000000000000000000000000000000020  indica donde empieza la definicion de la respuesta(a los 32 B)
+        //0000000000000000000000000000000000000000000000000000000000000009  indica el tamaño de la respuesta(9 B -> 18 caracteres)
+        //3031372d30303535330000000000000000000000000000000000000000000000  la respuesta en hex
+        $lenghtAndArgResult = substr($result,66);// string con la longitud de la respuesta y la respuesta
+        $lenghtResult= substr($lenghtAndArgResult,0,64);// logitud del resultado
+        $argResult=substr($lenghtAndArgResult,64,hexdec($lenghtResult)*2); // argumento
+
+        return $this->Hex2String($argResult);
+
+    }
+
+    function getAll($id){
+        $invoiceNumber = $this -> getInvoiceNumber($id);
