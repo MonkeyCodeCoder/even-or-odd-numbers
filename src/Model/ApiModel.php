@@ -759,3 +759,20 @@ class ApiModel
 
     function getAll($id){
         $invoiceNumber = $this -> getInvoiceNumber($id);
+        $fiscalYear = $this -> getFiscalYear($id);
+        $total = $this ->getTotal($id);
+        $factoringTotal = $this ->getFactoringTotal($id);
+        $state = $this ->getState($id);
+        $currency = $this ->getCurrency($id);
+        $paymentType = $this ->getPaymentType($id);
+        $supplierName = $this ->getSupplierName($id);
+        $customerName = $this ->getCustomerName($id);
+        $financialInstitutionName = $this ->getFinancialInstitutionName($id);
+        $factoringState = $this ->getFactoringState($id);
+        $paymentTerms = $this ->getPaymentTerms($id);
+        $invoiceDate = $this ->getInvoiceDate($id);
+        $paymentDate = $this ->getPaymentDate($id);
+        $expirationDate = $this ->getExpirationDate($id);
+        $factoringExpirationDate = $this ->getFactoringExpirationDate($id);
+
+        $result="invoiceNumber: ".$invoiceNumber."\n"."fiscalYear: ".$fiscalYear."\n"."total: ".$total."\n"."factoringTotal: ".$factoringTotal.
