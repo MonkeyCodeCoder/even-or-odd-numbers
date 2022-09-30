@@ -776,3 +776,20 @@ class ApiModel
         $factoringExpirationDate = $this ->getFactoringExpirationDate($id);
 
         $result="invoiceNumber: ".$invoiceNumber."\n"."fiscalYear: ".$fiscalYear."\n"."total: ".$total."\n"."factoringTotal: ".$factoringTotal.
+            "\n"."state: ".$state."\n"."currency: ".$currency."\n"."paymentType: ".$paymentType."\n"."supplierName: ".$supplierName."\n".
+            "customerName: ".$customerName."\n"."financialInstitutionName: ".$financialInstitutionName."\n"."factoringState: ".$factoringState.
+            "\n"."paymentTerms: ".$paymentTerms."\n"."invoiceDate: ".$invoiceDate."\n"."paymentDate: ".$paymentDate."\n"."expirationDate: "
+            .$expirationDate."\n"."factoringExpirationDate: ".$factoringExpirationDate;
+        return $result;
+    }
+
+//----------------------------------------------------delete--------------------------------------------------
+    function deleteDocument($id){
+        // hex del id
+        $idHex = $this->String2Hex($id);
+        //tomar el numero de caracteres, dividir por 2 para obtener el numero de bytes y pasar ese numero a hex y dezplazarlo
+        $lengthIdHex=str_pad(dechex(strlen($idHex )/2), 64, "0", STR_PAD_LEFT);
+        // bytes desde el id del metodo hasta el argumento, hex de 32 = 20
+        $argIdPos =str_pad(20, 64, "0", STR_PAD_LEFT);
+
+        //keccak-256 de deleteDocument(string) 635994f8db12f568c0607e4ea4ed49f862f8f5b344844da19e37321a497576df
