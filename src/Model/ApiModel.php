@@ -793,3 +793,15 @@ class ApiModel
         $argIdPos =str_pad(20, 64, "0", STR_PAD_LEFT);
 
         //keccak-256 de deleteDocument(string) 635994f8db12f568c0607e4ea4ed49f862f8f5b344844da19e37321a497576df
+        $call="0x635994f8". $argIdPos.$lengthIdHex.$idHex;
+
+        $data  = [
+            'jsonrpc'=>'2.0','method'=>'eth_sendTransaction','params'=>[[
+                "from"=> self::ACCOUNT, "to"=> self::CONTRACT,"gas"=>"0x927c0","data"=> $call]],'id'=>67
+        ];
+        $params= json_encode($data);
+        $this->unlockAccount();
+        $handler = curl_init();
+        curl_setopt($handler, CURLOPT_URL, self::URl);
+        curl_setopt($handler, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+        curl_setopt($handler, CURLOPT_POST,true);
