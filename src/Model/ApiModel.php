@@ -805,3 +805,18 @@ class ApiModel
         curl_setopt($handler, CURLOPT_URL, self::URl);
         curl_setopt($handler, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
         curl_setopt($handler, CURLOPT_POST,true);
+        curl_setopt($handler, CURLOPT_POSTFIELDS, $params);
+        curl_setopt($handler, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec ($handler);
+        curl_close($handler);
+        $json=json_decode($response,true);
+        $result=$json['result'];
+        return "hash de la transferencia : ".$result;
+    }
+
+    function deleteAll(){
+        //keccak-256 de deleteAll() 4c164407fed0cf6a8ddb375aa41136c1c45789dce48020e0f048ec4ad43a1262
+        $call="0x4c164407";
+        $data  = [
+            'jsonrpc'=>'2.0','method'=>'eth_sendTransaction','params'=>[[
+                "from"=> self::ACCOUNT, "to"=> self::CONTRACT,"gas"=>"0x927c0","data"=> $call]],'id'=>67
