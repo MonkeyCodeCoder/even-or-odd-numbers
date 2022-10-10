@@ -875,3 +875,20 @@ class ApiModel
         $lengthCurrencyHex = str_pad(dechex(strlen($currencyHex )/2), 64, "0", STR_PAD_LEFT);
         $lengthPaymentTypeHex = str_pad(dechex(strlen($paymentTypeHex )/2), 64, "0", STR_PAD_LEFT);
         $lengthSupplierNameHex = str_pad(dechex(strlen($supplierNameHex )/2), 64, "0", STR_PAD_LEFT);
+        $lengthCustomerNameHex = str_pad(dechex(strlen($customerNameHex )/2), 64, "0", STR_PAD_LEFT);
+        $lengthPaymentTermsHex = str_pad(dechex(strlen($paymentTermsHex )/2), 64, "0", STR_PAD_LEFT);
+        $lengthInvoiceDateHex = str_pad(dechex(strlen($invoiceDateHex )/2), 64, "0", STR_PAD_LEFT);
+
+        //posiciones de los parametros
+        // bytes desde el id del metodo hasta el argumento, hex de (11*32)=352= 160 hex
+        $argIdPos = str_pad("160", 64, "0", STR_PAD_LEFT);
+        //(14*32)=448 = 1c0 hex
+        $argInvoiceNumberPos = str_pad("1c0", 64, "0", STR_PAD_LEFT);
+        //(16*32)=512 = 200 hex
+        $argFiscalYearPos = str_pad("200", 64, "0", STR_PAD_LEFT);
+        //(18*32)=576 = 240 hex
+        $argTotaPos = str_pad("240", 64, "0", STR_PAD_LEFT);
+        //(20*32)=640 = 280 hex
+        $argStatePos = str_pad("280", 64, "0", STR_PAD_LEFT);
+        //(22*32)=704 = 2c0 hex
+        $argCurrencyPos = str_pad("2c0", 64, "0", STR_PAD_LEFT);
