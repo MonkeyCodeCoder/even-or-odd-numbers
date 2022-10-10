@@ -854,3 +854,24 @@ class ApiModel
         $invoiceDateHex = $this->String2Hex($invoiceDate);
 
         // dezplazar los parametros
+        $invoiceNumberHexPad = str_pad($invoiceNumberHex, 64, "0");
+        $fiscalYearHexPad = str_pad($fiscalYearHex, 64, "0");
+        $totalHexPad = str_pad($totalHex, 64, "0");
+        $stateHexPad = str_pad($stateHex, 64, "0");
+        $currencyHexPad = str_pad($currencyHex, 64, "0");
+        $paymentTypeHexPad = str_pad($paymentTypeHex, 64, "0");
+        $supplierNameHexPad = str_pad($supplierNameHex, 64, "0");
+        $customerNameHexPad = str_pad($customerNameHex, 64, "0");
+        $paymentTermsHexPad = str_pad($paymentTermsHex, 64, "0");
+        $invoiceDateHexPad = str_pad($invoiceDateHex, 64, "0");
+
+        //obtener el tamaño de los parametros
+        //tomar el numero de caracteres, dividir por 2 para obtener el numero de bytes y pasar ese numero a hex y dezplazarlo
+        $lengthIdHex = str_pad(dechex(strlen($idHex )/2), 64, "0", STR_PAD_LEFT);
+        $lengthInvoiceNumberHex = str_pad(dechex(strlen($invoiceNumberHex )/2), 64, "0", STR_PAD_LEFT);
+        $lengthFiscalYearHex = str_pad(dechex(strlen($fiscalYearHex )/2), 64, "0", STR_PAD_LEFT);
+        $lengthTotalHex = str_pad(dechex(strlen($totalHex )/2), 64, "0", STR_PAD_LEFT);
+        $lengthStateHex = str_pad(dechex(strlen($stateHex )/2), 64, "0", STR_PAD_LEFT);
+        $lengthCurrencyHex = str_pad(dechex(strlen($currencyHex )/2), 64, "0", STR_PAD_LEFT);
+        $lengthPaymentTypeHex = str_pad(dechex(strlen($paymentTypeHex )/2), 64, "0", STR_PAD_LEFT);
+        $lengthSupplierNameHex = str_pad(dechex(strlen($supplierNameHex )/2), 64, "0", STR_PAD_LEFT);
