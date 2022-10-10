@@ -842,3 +842,15 @@ class ApiModel
                             $invoiceDate,$paymentDate,$expirationDate,$factoringExpirationDate){
         // hex de los parametros
         $idHex = $this->String2Hex($id);
+        $invoiceNumberHex = $this->String2Hex($invoiceNumber);
+        $fiscalYearHex = $this->String2Hex($fiscalYear);
+        $totalHex = $this->String2Hex($total);
+        $stateHex = $this->String2Hex($state);
+        $currencyHex = $this->String2Hex($currency);
+        $paymentTypeHex = $this->String2Hex($paymentType);
+        $supplierNameHex = $this->String2Hex($supplierName);
+        $customerNameHex = $this->String2Hex($customerName);
+        $paymentTermsHex = $this->String2Hex($paymentTerms);
+        $invoiceDateHex = $this->String2Hex($invoiceDate);
+
+        // dezplazar los parametros
