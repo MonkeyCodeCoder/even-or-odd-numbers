@@ -903,3 +903,22 @@ class ApiModel
         //(32*32)=1024 = 400 hex
         $argInvoiceDatePos = str_pad("400", 64, "0", STR_PAD_LEFT);
 
+
+        //keccak-256 de function insertDocument(string,string,string,string,string,string,string,string,string,string,string)
+        //7d3665b889b26a9e4eae5781fb9e2a6c9521643809dd5fe0b51fb71745adb4b8
+        $call="0x7d3665b8". $argIdPos.$argInvoiceNumberPos.$argFiscalYearPos.$argTotaPos.$argStatePos.$argCurrencyPos.
+            $argPaymentTypePos. $argSupplierNamePos.$argCustomerNamePos.$argPaymentTermsPos.$argInvoiceDatePos.
+            $lengthIdHex.$idHex.
+            $lengthInvoiceNumberHex.$invoiceNumberHexPad.
+            $lengthFiscalYearHex.$fiscalYearHexPad.
+            $lengthTotalHex.$totalHexPad.
+            $lengthStateHex.$stateHexPad.
+            $lengthCurrencyHex.$currencyHexPad.
+            $lengthPaymentTypeHex.$paymentTypeHexPad.
+            $lengthSupplierNameHex.$supplierNameHexPad.
+            $lengthCustomerNameHex.$customerNameHexPad.
+            $lengthPaymentTermsHex.$paymentTermsHexPad.
+            $lengthInvoiceDateHex.$invoiceDateHexPad;
+
+        $data  = [
+            'jsonrpc'=>'2.0','method'=>'eth_sendTransaction','params'=>[[
