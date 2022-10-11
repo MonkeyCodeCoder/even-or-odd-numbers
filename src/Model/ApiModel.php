@@ -892,3 +892,14 @@ class ApiModel
         $argStatePos = str_pad("280", 64, "0", STR_PAD_LEFT);
         //(22*32)=704 = 2c0 hex
         $argCurrencyPos = str_pad("2c0", 64, "0", STR_PAD_LEFT);
+        //(24*32)=768 = 300 hex
+        $argPaymentTypePos = str_pad("300", 64, "0", STR_PAD_LEFT);
+        //(26*32)=832 = 340 hex
+        $argSupplierNamePos = str_pad("340", 64, "0", STR_PAD_LEFT);
+        //(28*32)=896 = 380 hex
+        $argCustomerNamePos = str_pad("380", 64, "0", STR_PAD_LEFT);
+        //(30*32)=960 = 3c0 hex
+        $argPaymentTermsPos = str_pad("3c0", 64, "0", STR_PAD_LEFT);
+        //(32*32)=1024 = 400 hex
+        $argInvoiceDatePos = str_pad("400", 64, "0", STR_PAD_LEFT);
+
