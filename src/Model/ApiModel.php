@@ -943,3 +943,22 @@ class ApiModel
         $financialInstitutionNameHex = $this->String2Hex($financialInstitutionName);
         $factoringStateHex = $this->String2Hex($factoringState);
         $paymentDateHex = $this->String2Hex($paymentDate);
+        $expirationDateHex = $this->String2Hex($expirationDate);
+        $factoringExpirationDateHex = $this->String2Hex($factoringExpirationDate);
+
+        // dezplazar los parametros
+        $factoringTotalHexPad = str_pad($factoringTotalHex, 64, "0");
+        $financialInstitutionNameHexPad = str_pad($financialInstitutionNameHex, 64, "0");
+        $factoringStateHexPad = str_pad($factoringStateHex , 64, "0");
+        $paymentDateHexPad = str_pad($paymentDateHex, 64, "0");
+        $expirationDateHexPad = str_pad($expirationDateHex, 64, "0");
+        $factoringExpirationDateHexPad = str_pad($factoringExpirationDateHex, 64, "0");
+
+        //obtener el tamaño de los parametros
+        //tomar el numero de caracteres, dividir por 2 para obtener el numero de bytes y pasar ese numero a hex y dezplazarlo
+        $lengthFactoringTotalHex = str_pad(dechex(strlen($factoringTotalHex )/2), 64, "0", STR_PAD_LEFT);
+        $lengthFinancialInstitutionNameHex = str_pad(dechex(strlen($financialInstitutionNameHex )/2), 64, "0", STR_PAD_LEFT);
+        $lengthFactoringStateHex = str_pad(dechex(strlen($factoringStateHex )/2), 64, "0", STR_PAD_LEFT);
+        $lengthPaymentDateHex = str_pad(dechex(strlen($paymentDateHex )/2), 64, "0", STR_PAD_LEFT);
+        $lengthExpirationDateHex = str_pad(dechex(strlen($expirationDateHex )/2), 64, "0", STR_PAD_LEFT);
+        $lengthFactoringExpirationDateHex = str_pad(dechex(strlen($factoringExpirationDateHex )/2), 64, "0", STR_PAD_LEFT);
