@@ -962,3 +962,22 @@ class ApiModel
         $lengthPaymentDateHex = str_pad(dechex(strlen($paymentDateHex )/2), 64, "0", STR_PAD_LEFT);
         $lengthExpirationDateHex = str_pad(dechex(strlen($expirationDateHex )/2), 64, "0", STR_PAD_LEFT);
         $lengthFactoringExpirationDateHex = str_pad(dechex(strlen($factoringExpirationDateHex )/2), 64, "0", STR_PAD_LEFT);
+
+        //posiciones de los parametros
+        // bytes desde el id del metodo hasta el argumento, hex de (7*32)=224= e0 hex
+        $argIdPosExtra = str_pad("e0", 64, "0", STR_PAD_LEFT);
+        //(10*32)=320 = 140 hex
+        $argFactoringTotalPos = str_pad("140", 64, "0", STR_PAD_LEFT);
+        //(12*32)=384 = 180 hex
+        $argFinancialInstitutionNamePos = str_pad("180", 64, "0", STR_PAD_LEFT);
+        //(14*32)=448 = 1c0 hex
+        $argFactoringStatePos = str_pad("1c0", 64, "0", STR_PAD_LEFT);
+        //(16*32)=512 = 200 hex
+        $argPaymentDatePos = str_pad("200", 64, "0", STR_PAD_LEFT);
+        //(18*32)=576 = 240 hex
+        $argExpirationDatePos = str_pad("240", 64, "0", STR_PAD_LEFT);
+        //(20*32)=640 = 280 hex
+        $argFactoringExpirationDatePos = str_pad("280", 64, "0", STR_PAD_LEFT);
+
+        //keccak-256 de insertDocumentExtra(string,string,string,string,string,string,string) 65deb5ea0eb54f97b2d4b3e237b12df0720279a1fbb44fac45e7acfbfa4726f6
+        $callExtra="0x65deb5ea".$argIdPosExtra.$argFactoringTotalPos.$argFinancialInstitutionNamePos.$argFactoringStatePos.
