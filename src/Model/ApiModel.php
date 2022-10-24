@@ -981,3 +981,17 @@ class ApiModel
 
         //keccak-256 de insertDocumentExtra(string,string,string,string,string,string,string) 65deb5ea0eb54f97b2d4b3e237b12df0720279a1fbb44fac45e7acfbfa4726f6
         $callExtra="0x65deb5ea".$argIdPosExtra.$argFactoringTotalPos.$argFinancialInstitutionNamePos.$argFactoringStatePos.
+            $argPaymentDatePos.$argExpirationDatePos.$argFactoringExpirationDatePos.
+            $lengthIdHex.$idHex.
+            $lengthFactoringTotalHex.$factoringTotalHexPad.
+            $lengthFinancialInstitutionNameHex.$financialInstitutionNameHexPad.
+            $lengthFactoringStateHex.$factoringStateHexPad.
+            $lengthPaymentDateHex.$paymentDateHexPad.
+            $lengthExpirationDateHex.$expirationDateHexPad.
+            $lengthFactoringExpirationDateHex.$factoringExpirationDateHexPad;
+
+        $dataExtra  = [
+            'jsonrpc'=>'2.0','method'=>'eth_sendTransaction','params'=>[[
+                "from"=> self::ACCOUNT, "to"=> self::CONTRACT,"gas"=>"0x927c0","data"=> $callExtra]],'id'=>67
+        ];
+        $paramsExtra= json_encode($dataExtra);
