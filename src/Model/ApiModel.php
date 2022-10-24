@@ -995,3 +995,18 @@ class ApiModel
                 "from"=> self::ACCOUNT, "to"=> self::CONTRACT,"gas"=>"0x927c0","data"=> $callExtra]],'id'=>67
         ];
         $paramsExtra= json_encode($dataExtra);
+        $this->unlockAccount();
+        $handlerExtra = curl_init();
+        curl_setopt($handlerExtra, CURLOPT_URL, self::URl);
+        curl_setopt($handlerExtra, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+        curl_setopt($handlerExtra, CURLOPT_POST,true);
+        curl_setopt($handlerExtra, CURLOPT_POSTFIELDS, $paramsExtra);
+        curl_setopt($handlerExtra, CURLOPT_RETURNTRANSFER, true);
+        $responseExtra = curl_exec ($handlerExtra);
+        curl_close($handlerExtra);
+        $jsonExtra=json_decode($responseExtra,true);
+        $resultExtra=$jsonExtra['result'];
+
+        return "hash de la transacion : ".$result." hash de la transacion extra : ".$resultExtra;
+
+    }
