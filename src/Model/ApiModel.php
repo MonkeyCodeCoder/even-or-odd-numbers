@@ -1043,3 +1043,14 @@ class ApiModel
         curl_setopt($handler, CURLOPT_RETURNTRANSFER, true);
         $response = curl_exec ($handler);
         curl_close($handler);
+        $json=json_decode($response,true);
+        $result=$json['result'];
+
+        return "hash de la transferencia : ".$result;
+
+    }
+
+    function setFinancialInstitutionName($id,$financialInstitutionName){
+        // hex de los parametros
+        $idHex = $this->String2Hex($id);
+        $financialInstitutionNameHex = $this->String2Hex($financialInstitutionName);
