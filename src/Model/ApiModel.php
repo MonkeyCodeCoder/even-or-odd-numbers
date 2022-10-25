@@ -1010,3 +1010,23 @@ class ApiModel
         return "hash de la transacion : ".$result." hash de la transacion extra : ".$resultExtra;
 
     }
+
+
+//---------------------------------------------------setters------------------------------------------------------
+
+    function setExpirationDate($id,$expirationDate){
+        // hex de los parametros
+        $idHex = $this->String2Hex($id);
+        $expirationDateHex = $this->String2Hex($expirationDate);
+        $expirationDateHexPad=str_pad($expirationDateHex, 64, "0");
+        //tomar el numero de caracteres, dividir por 2 para obtener el numero de bytes y pasar ese numero a hex y dezplazarlo
+        $leghtIdHex = str_pad(dechex(strlen($idHex )/2), 64, "0", STR_PAD_LEFT);
+        $leghtExpirationDateHex=str_pad(dechex(strlen($expirationDateHex )/2), 64, "0", STR_PAD_LEFT);
+        // bytes desde el id del metodo hasta el argumento, hex de (2*32)=64 = 40
+        $argIdPos = str_pad(40, 64, "0", STR_PAD_LEFT);
+        //(5*32)=160 = a0
+        $argExpirationDatePos =str_pad("a0", 64, "0", STR_PAD_LEFT);
+        //keccak-256 de setExpirationDate(string,string) 6547f5faef5286132db7b1b4dc8bb572c7d5902a6913c8184de8207bdcb6e8f7
+        $call="0x6547f5fa". $argIdPos .$argExpirationDatePos. $leghtIdHex.$idHex.$leghtExpirationDateHex.$expirationDateHexPad;
+
+        $data  = [
