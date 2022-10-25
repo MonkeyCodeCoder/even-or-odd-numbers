@@ -1054,3 +1054,21 @@ class ApiModel
         // hex de los parametros
         $idHex = $this->String2Hex($id);
         $financialInstitutionNameHex = $this->String2Hex($financialInstitutionName);
+        $financialInstitutionNameHexPad=str_pad($financialInstitutionNameHex, 64, "0");
+        //tomar el numero de caracteres, dividir por 2 para obtener el numero de bytes y pasar ese numero a hex y dezplazarlo
+        $leghtIdHex = str_pad(dechex(strlen($idHex )/2), 64, "0", STR_PAD_LEFT);
+        $leghtFinancialInstitutionNameHex=str_pad(dechex(strlen($financialInstitutionNameHex )/2), 64, "0", STR_PAD_LEFT);
+        // bytes desde el id del metodo hasta el argumento, hex de (2*32)=64 = 40
+        $argIdPos = str_pad(40, 64, "0", STR_PAD_LEFT);
+        //(5*32)=160 = a0
+        $argFinancialInstitutionNamePos =str_pad("a0", 64, "0", STR_PAD_LEFT);
+        //keccak-256 de setFinancialInstitutionName(string,string) c9acf1e471801e7acd26ccd6b2b1aa6784f01f8a670de454135fd7c78fd263ff
+        $call="0xc9acf1e4". $argIdPos .$argFinancialInstitutionNamePos. $leghtIdHex.$idHex.$leghtFinancialInstitutionNameHex.$financialInstitutionNameHexPad;
+
+        $data  = [
+            'jsonrpc'=>'2.0','method'=>'eth_sendTransaction','params'=>[[
+                "from"=> self::ACCOUNT, "to"=>self::CONTRACT,"gas"=>"0x927c0","data"=> $call]],'id'=>67
+        ];
+        $params= json_encode($data);
+        $this->unlockAccount();
+        $handler = curl_init();
