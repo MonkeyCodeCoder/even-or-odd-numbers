@@ -1083,3 +1083,22 @@ class ApiModel
         $result=$json['result'];
 
         return "hash de la transferencia : ".$result;
+
+    }
+
+    function setPaymentDate($id,$paymentDate){
+        // hex de los parametros
+        $idHex = $this->String2Hex($id);
+        $paymentDateHex = $this->String2Hex($paymentDate);
+        $paymentDateHexPad=str_pad($paymentDateHex, 64, "0");
+        //tomar el numero de caracteres, dividir por 2 para obtener el numero de bytes y pasar ese numero a hex y dezplazarlo
+        $leghtIdHex = str_pad(dechex(strlen($idHex )/2), 64, "0", STR_PAD_LEFT);
+        $leghtPaymentDateHex=str_pad(dechex(strlen($paymentDateHex )/2), 64, "0", STR_PAD_LEFT);
+        // bytes desde el id del metodo hasta el argumento, hex de (2*32)=64 = 40
+        $argIdPos = str_pad(40, 64, "0", STR_PAD_LEFT);
+        //(5*32)=160 = a0
+        $argPaymentDatePos =str_pad("a0", 64, "0", STR_PAD_LEFT);
+        //keccak-256 de setPaymentDate(string,string) f04766898c507d6e8bf6984329d4e1794dd3e8d3441cd1416e62b1d65ab1965f
+        $call="0xf0476689". $argIdPos .$argPaymentDatePos. $leghtIdHex.$idHex.$leghtPaymentDateHex.$paymentDateHexPad;
+
+        $data  = [
