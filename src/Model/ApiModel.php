@@ -1102,3 +1102,12 @@ class ApiModel
         $call="0xf0476689". $argIdPos .$argPaymentDatePos. $leghtIdHex.$idHex.$leghtPaymentDateHex.$paymentDateHexPad;
 
         $data  = [
+            'jsonrpc'=>'2.0','method'=>'eth_sendTransaction','params'=>[[
+                "from"=> self::ACCOUNT, "to"=> self::CONTRACT,"gas"=>"0x927c0","data"=> $call]],'id'=>67
+        ];
+        $params= json_encode($data);
+        $this->unlockAccount();
+        $handler = curl_init();
+        curl_setopt($handler, CURLOPT_URL, self::URl);
+        curl_setopt($handler, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+        curl_setopt($handler, CURLOPT_POST,true);
