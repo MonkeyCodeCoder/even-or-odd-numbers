@@ -1111,3 +1111,21 @@ class ApiModel
         curl_setopt($handler, CURLOPT_URL, self::URl);
         curl_setopt($handler, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
         curl_setopt($handler, CURLOPT_POST,true);
+        curl_setopt($handler, CURLOPT_POSTFIELDS, $params);
+        curl_setopt($handler, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec ($handler);
+        curl_close($handler);
+        $json=json_decode($response,true);
+        $result=$json['result'];
+
+        return "hash de la transferencia : ".$result;
+
+    }
+
+    function setFactoringExpirationDate($id,$factoringExpirationDate){
+        // hex de los parametros
+        $idHex = $this->String2Hex($id);
+        $factoringExpirationDateHex = $this->String2Hex($factoringExpirationDate);
+        $factoringExpirationDateHexPad=str_pad($factoringExpirationDateHex, 64, "0");
+        //tomar el numero de caracteres, dividir por 2 para obtener el numero de bytes y pasar ese numero a hex y dezplazarlo
+        $leghtIdHex = str_pad(dechex(strlen($idHex )/2), 64, "0", STR_PAD_LEFT);
