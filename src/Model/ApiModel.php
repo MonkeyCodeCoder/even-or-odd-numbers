@@ -1129,3 +1129,21 @@ class ApiModel
         $factoringExpirationDateHexPad=str_pad($factoringExpirationDateHex, 64, "0");
         //tomar el numero de caracteres, dividir por 2 para obtener el numero de bytes y pasar ese numero a hex y dezplazarlo
         $leghtIdHex = str_pad(dechex(strlen($idHex )/2), 64, "0", STR_PAD_LEFT);
+        $leghtFactoringExpirationDateHex=str_pad(dechex(strlen($factoringExpirationDateHex )/2), 64, "0", STR_PAD_LEFT);
+        // bytes desde el id del metodo hasta el argumento, hex de (2*32)=64 = 40
+        $argIdPos = str_pad(40, 64, "0", STR_PAD_LEFT);
+        //(5*32)=160 = a0
+        $argFactoringExpirationDatePos =str_pad("a0", 64, "0", STR_PAD_LEFT);
+        //keccak-256 de setFactoringExpirationDate(string,string) 1326917ac0ad4433b3f0e7074cf38aa1e5c560d4a965cae4f0074266b8974bab
+        $call="0x1326917a". $argIdPos .$argFactoringExpirationDatePos. $leghtIdHex.$idHex.$leghtFactoringExpirationDateHex.$factoringExpirationDateHexPad;
+
+        $data  = [
+            'jsonrpc'=>'2.0','method'=>'eth_sendTransaction','params'=>[[
+                "from"=> self::ACCOUNT, "to"=> self::CONTRACT,"gas"=>"0x927c0","data"=> $call]],'id'=>67
+        ];
+        $params= json_encode($data);
+        $this->unlockAccount();
+        $handler = curl_init();
+        curl_setopt($handler, CURLOPT_URL, self::URl);
+        curl_setopt($handler, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+        curl_setopt($handler, CURLOPT_POST,true);
