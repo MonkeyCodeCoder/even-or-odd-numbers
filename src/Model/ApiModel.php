@@ -1182,3 +1182,12 @@ class ApiModel
         $handler = curl_init();
         curl_setopt($handler, CURLOPT_URL, self::URl);
         curl_setopt($handler, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+        curl_setopt($handler, CURLOPT_POST,true);
+        curl_setopt($handler, CURLOPT_POSTFIELDS, $params);
+        curl_setopt($handler, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec ($handler);
+        curl_close($handler);
+        $json=json_decode($response,true);
+        $result=$json['result'];
+
+        return "hash de la transferencia : ".$result;
