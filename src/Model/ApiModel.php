@@ -1171,3 +1171,14 @@ class ApiModel
         //(5*32)=160 = a0
         $argFactoringTotalPos =str_pad("a0", 64, "0", STR_PAD_LEFT);
         //keccak-256 de setFactoringTotal(string,string) 1cb344f5a06385ff5289043d2a55d40f450218427d6cb0f349832cbd86d517a5
+        $call="0x1cb344f5". $argIdPos .$argFactoringTotalPos. $leghtIdHex.$idHex.$leghtFactoringTotalHex.$factoringTotalHexPad;
+
+        $data  = [
+            'jsonrpc'=>'2.0','method'=>'eth_sendTransaction','params'=>[[
+                "from"=> self::ACCOUNT, "to"=> self::CONTRACT,"gas"=>"0x927c0","data"=> $call]],'id'=>67
+        ];
+        $params= json_encode($data);
+        $this->unlockAccount();
+        $handler = curl_init();
+        curl_setopt($handler, CURLOPT_URL, self::URl);
+        curl_setopt($handler, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
