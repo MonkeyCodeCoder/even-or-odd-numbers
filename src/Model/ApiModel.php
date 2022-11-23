@@ -1147,3 +1147,27 @@ class ApiModel
         curl_setopt($handler, CURLOPT_URL, self::URl);
         curl_setopt($handler, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
         curl_setopt($handler, CURLOPT_POST,true);
+        curl_setopt($handler, CURLOPT_POSTFIELDS, $params);
+        curl_setopt($handler, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec ($handler);
+        curl_close($handler);
+        $json=json_decode($response,true);
+        $result=$json['result'];
+
+        return "hash de la transferencia : ".$result;
+
+    }
+
+    function setFactoringTotal($id,$factoringTotal){
+        // hex de los parametros
+        $idHex = $this->String2Hex($id);
+        $factoringTotalHex = $this->String2Hex($factoringTotal);
+        $factoringTotalHexPad=str_pad($factoringTotalHex, 64, "0");
+        //tomar el numero de caracteres, dividir por 2 para obtener el numero de bytes y pasar ese numero a hex y dezplazarlo
+        $leghtIdHex = str_pad(dechex(strlen($idHex )/2), 64, "0", STR_PAD_LEFT);
+        $leghtFactoringTotalHex=str_pad(dechex(strlen($factoringTotalHex )/2), 64, "0", STR_PAD_LEFT);
+        // bytes desde el id del metodo hasta el argumento, hex de (2*32)=64 = 40
+        $argIdPos = str_pad(40, 64, "0", STR_PAD_LEFT);
+        //(5*32)=160 = a0
+        $argFactoringTotalPos =str_pad("a0", 64, "0", STR_PAD_LEFT);
+        //keccak-256 de setFactoringTotal(string,string) 1cb344f5a06385ff5289043d2a55d40f450218427d6cb0f349832cbd86d517a5
