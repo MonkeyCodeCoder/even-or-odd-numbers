@@ -1191,3 +1191,20 @@ class ApiModel
         $result=$json['result'];
 
         return "hash de la transferencia : ".$result;
+
+    }
+
+//--------------------------------------------------setter state----------------------------------------------------
+
+    function setStatePending($id){
+        // hex de los parametros
+        $idHex = $this->String2Hex($id);
+        //tomar el numero de caracteres, dividir por 2 para obtener el numero de bytes y pasar ese numero a hex y dezplazarlo
+        $leghtIdHex = str_pad(dechex(strlen($idHex )/2), 64, "0", STR_PAD_LEFT);
+        // bytes desde el id del metodo hasta el argumento, hex de (2*32)=64 = 40
+        $argIdPos = str_pad(20, 64, "0", STR_PAD_LEFT);
+        //keccak-256 de setStatePending(string) cfff7c2a06af7a8e9baac745b3b73d7fd32e7e55be2c7c5128763cbb1adfc767
+        $call="0xcfff7c2a".$argIdPos.$leghtIdHex.$idHex;
+
+        $data  = [
+            'jsonrpc'=>'2.0','method'=>'eth_sendTransaction','params'=>[[
