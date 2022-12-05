@@ -1255,3 +1255,25 @@ class ApiModel
         $result=$json['result'];
 
         return "hash de la transferencia : ".$result;
+
+    }
+
+    function setStatePaidfromAccepted($id){
+        // hex de los parametros
+        $idHex = $this->String2Hex($id);
+        //tomar el numero de caracteres, dividir por 2 para obtener el numero de bytes y pasar ese numero a hex y dezplazarlo
+        $leghtIdHex = str_pad(dechex(strlen($idHex )/2), 64, "0", STR_PAD_LEFT);
+        // bytes desde el id del metodo hasta el argumento, hex de (2*32)=64 = 40
+        $argIdPos = str_pad(20, 64, "0", STR_PAD_LEFT);
+        //keccak-256 de setStatePaidfromAccepted(string) 94bbf62345d3434672a5db3353b10667f708adaa65c4074a2cb653ba0c911c4f
+        $call="0x94bbf623".$argIdPos.$leghtIdHex.$idHex;
+
+        $data  = [
+            'jsonrpc'=>'2.0','method'=>'eth_sendTransaction','params'=>[[
+                "from"=> self::ACCOUNT, "to"=> self::CONTRACT,"gas"=>"0x927c0","data"=> $call]],'id'=>67
+        ];
+        $params= json_encode($data);
+        $this->unlockAccount();
+        $handler = curl_init();
+        curl_setopt($handler, CURLOPT_URL, self::URl);
+        curl_setopt($handler, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
