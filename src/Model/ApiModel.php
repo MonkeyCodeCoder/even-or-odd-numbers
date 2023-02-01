@@ -1319,3 +1319,17 @@ class ApiModel
         return "hash de la transferencia : ".$result;
 
     }
+
+    function setFactoringStateAcceptedfromRequested($id){
+        // hex de los parametros
+        $idHex = $this->String2Hex($id);
+        //tomar el numero de caracteres, dividir por 2 para obtener el numero de bytes y pasar ese numero a hex y dezplazarlo
+        $leghtIdHex = str_pad(dechex(strlen($idHex )/2), 64, "0", STR_PAD_LEFT);
+        // bytes desde el id del metodo hasta el argumento, hex de (2*32)=64 = 40
+        $argIdPos = str_pad(20, 64, "0", STR_PAD_LEFT);
+        //keccak-256 de setFactoringStateAcceptedfromRequested(string) ba32323fa688324c4766bb31280920bc536a819a6418901bcd5abecb762233fa
+        $call="0xba32323f".$argIdPos.$leghtIdHex.$idHex;
+
+        $data  = [
+            'jsonrpc'=>'2.0','method'=>'eth_sendTransaction','params'=>[[
+                "from"=> self::ACCOUNT, "to"=> self::CONTRACT,"gas"=>"0x927c0","data"=> $call]],'id'=>67
