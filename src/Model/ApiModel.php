@@ -1346,3 +1346,13 @@ class ApiModel
         curl_close($handler);
         $json=json_decode($response,true);
         $result=$json['result'];
+
+        return "hash de la transferencia : ".$result;
+
+    }
+
+
+    private function unlockAccount(){
+        // curl -X POST --data '{"jsonrpc":"2.0","method":"personal_unlockAccount","params":["0x7642b...", "password", 3600],"id":67}' http://localhost:8545
+        $url = "http://localhost:8545";
+        $data  = [
