@@ -1356,3 +1356,13 @@ class ApiModel
         // curl -X POST --data '{"jsonrpc":"2.0","method":"personal_unlockAccount","params":["0x7642b...", "password", 3600],"id":67}' http://localhost:8545
         $url = "http://localhost:8545";
         $data  = [
+            'jsonrpc'=>'2.0','method'=>'personal_unlockAccount','params'=>['0xDd421A95ab8D53919092Cf2A144815905C2BC4Db','bleSurfu',3600
+            ],'id'=>67
+        ];
+        $params= json_encode($data);
+        $handler = curl_init();
+        curl_setopt($handler, CURLOPT_URL, $url);
+        curl_setopt($handler, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+        curl_setopt($handler, CURLOPT_POST,true);
+        curl_setopt($handler, CURLOPT_POSTFIELDS, $params);
+        curl_setopt($handler, CURLOPT_RETURNTRANSFER, true);
