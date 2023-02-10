@@ -1366,3 +1366,17 @@ class ApiModel
         curl_setopt($handler, CURLOPT_POST,true);
         curl_setopt($handler, CURLOPT_POSTFIELDS, $params);
         curl_setopt($handler, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec ($handler);
+        curl_close($handler);
+    }
+
+    function String2Hex($string){
+        $hex='';
+        for ($i=0; $i < strlen($string); $i++){
+            $hex .= dechex(ord($string[$i]));
+        }
+        return $hex;
+    }
+
+    function Hex2String($hex){
+        $string='';
