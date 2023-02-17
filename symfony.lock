@@ -1,0 +1,15 @@
+
+{
+    "guzzlehttp/guzzle": {
+        "version": "6.3.0"
+    },
+    "guzzlehttp/promises": {
+        "version": "v1.3.1"
+    },
+    "guzzlehttp/psr7": {
+        "version": "1.4.2"
+    },
+    "kornrunner/keccak": {
+        "version": "dev-master"
+    },
+    "paragonie/constant_time_encoding": {
