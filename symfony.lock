@@ -13,3 +13,18 @@
         "version": "dev-master"
     },
     "paragonie/constant_time_encoding": {
+        "version": "v1.0.1"
+    },
+    "paragonie/random_compat": {
+        "version": "v2.0.11"
+    },
+    "phpseclib/phpseclib": {
+        "version": "dev-master"
+    },
+    "psr/cache": {
+        "version": "1.0.1"
+    },
+    "psr/container": {
+        "version": "1.0.0"
+    },
+    "psr/http-message": {
