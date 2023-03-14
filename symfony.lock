@@ -44,3 +44,20 @@
     },
     "symfony/class-loader": {
         "version": "v3.4.2"
+    },
+    "symfony/config": {
+        "version": "v3.4.2"
+    },
+    "symfony/console": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "9f94d3ea453cd8a3b95db7f82592d7344fe3a76a"
+        }
+    },
+    "symfony/debug": {
+        "version": "v3.4.2"
+    },
+    "symfony/dependency-injection": {
