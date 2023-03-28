@@ -61,3 +61,22 @@
         "version": "v3.4.2"
     },
     "symfony/dependency-injection": {
+        "version": "v3.4.2"
+    },
+    "symfony/dotenv": {
+        "version": "v3.4.2"
+    },
+    "symfony/event-dispatcher": {
+        "version": "v3.4.2"
+    },
+    "symfony/filesystem": {
+        "version": "v3.4.2"
+    },
+    "symfony/finder": {
+        "version": "v3.4.2"
+    },
+    "symfony/flex": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
