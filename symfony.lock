@@ -80,3 +80,20 @@
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "master",
+            "version": "1.0",
+            "ref": "cc1afd81841db36fbef982fe56b48ade6716fac4"
+        }
+    },
+    "symfony/framework-bundle": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "18f6fdceb63737d991efbb37ae9619a6f6c978c8"
+        }
+    },
+    "symfony/http-foundation": {
+        "version": "v3.4.2"
+    },
+    "symfony/http-kernel": {
